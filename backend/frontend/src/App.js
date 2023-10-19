@@ -5,6 +5,7 @@ import AddUser from "./pages/AddUser/AddUser";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Admin from "./pages/Admin/Admin";
+import Aboutus from "./pages/Aboutus/Aboutus";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
         <BrowserRouter>
           <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path="/about" element={<Aboutus/>}/>
+
           <Route path="/user" element={<User/>} />
           <Route path="/adduser" element={<AddUser/>} />
           <Route path="/login" element={<Login/>} />
