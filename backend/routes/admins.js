@@ -1,5 +1,5 @@
 const express = require('express');
-const Users = require('../models/admins');
+const Admins = require('../models/admins');
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ router.post('/admin/save', async (req, res) => {
 //get post 
 router.get('/admins', async (req, res) => {
     try {
-      const users = await Admins.find();
+      const admins = await Admins.find();
       return res.status(200).json(admins);
     } catch (error) {
       return res.status(400).json({
@@ -34,9 +34,9 @@ router.get('/admins', async (req, res) => {
 // get specific post
 router.get("/admin/:id", async (req, res) => {
     try {
-      const userId = req.params.id;
-      console.log("userId:", adminId);
-      const user = await Admins.findById(adminId).exec();
+      const adminId = req.params.id;
+      console.log("adminId:", adminId);
+      const admin = await Admins.findById(adminId).exec();
   
       if (!admin) {
         return res.status(404).json({ success: false, message: 'Admin not found' });
@@ -44,7 +44,7 @@ router.get("/admin/:id", async (req, res) => {
   
       return res.status(200).json({
         success: true,
-        user
+        admin
       });
     } catch (error) {
       return res.status(400).json({ success: false, error: error.message });
