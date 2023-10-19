@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import '../header/Header.css';
 import Logo from '../../Assets/Images/Logo.png';
 
-function Navbar1() {
+function Header() {
     return (
       <nav className="navbar1">
         <div className="navbar1-logo">
@@ -23,14 +23,21 @@ function Navbar1() {
           <li>
             <Link to="/contact">CONTACT US</Link>
           </li>
+
           <li>
           <Link to="/login">
-          <i class="fa-solid fa-user"></i>
-            </Link>
+          <i class="fa-solid fa-user"></i>          
+          </Link>
+          </li>
+
+          <li>
+          <Link to="/login">
+          <i class="fa-solid fa-user-tie"></i>
+          </Link>
           </li>
         </ul>
       </nav>
     );
   }
   
-  export default Navbar1;
+  export default Header;
